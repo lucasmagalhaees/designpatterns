@@ -1,19 +1,18 @@
 package com.lucasbarbosa.designpattern.exercises.finance.interfaces;
 
-import com.lucasbarbosa.designpattern.exercises.finance.model.Entry;
 import java.util.List;
 
-public interface Notifier {
+public interface Notifier<T> {
 
   public void addListener(Listener listener);
 
-  public void addAllListeners(List<Listener> allListeners);
+  public void addMultipleListeners(List<Listener> multipleListeners);
 
   public void removeListener(Listener listener);
 
   void notifyListeners();
 
-  public List<Entry> getNotificationContent();
+  public List<T> getNotificationContent();
 
-  public void notifyContent(List<Entry> entries);
+  public void setNotificationContent(List<T> entries);
 }

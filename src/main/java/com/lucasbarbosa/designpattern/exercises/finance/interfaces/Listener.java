@@ -33,6 +33,6 @@ public abstract class Listener {
 
   public void update(List<Entry> recordedEntries) {
     sendMessage(recordedEntries);
-    subscription.postNotification(this);
+    subscription.afterNotification(this);
   }
 }

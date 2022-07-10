@@ -3,17 +3,25 @@ package com.lucasbarbosa.designpattern.exercises.finance.usecase;
 import com.lucasbarbosa.designpattern.exercises.finance.interfaces.Listener;
 import com.lucasbarbosa.designpattern.exercises.finance.interfaces.Notifier;
 import com.lucasbarbosa.designpattern.exercises.finance.model.Entry;
+import java.util.ArrayList;
 import java.util.HashSet;
 import java.util.List;
 import java.util.Set;
 
-public class RecordedEntriesNotifier implements Notifier {
+public class EntryNotifier implements Notifier<Entry> {
 
   private Set<Listener> listeners;
+
   private List<Entry> recordedEntries;
 
-  public RecordedEntriesNotifier() {
+  public EntryNotifier() {
     this.listeners = new HashSet<>();
+    this.recordedEntries = new ArrayList<>();
+  }
+
+  public EntryNotifier(List<Entry> recordedEntries) {
+    this.listeners = new HashSet<>();
+    this.recordedEntries = recordedEntries;
   }
 
   @Override
@@ -23,8 +31,8 @@ public class RecordedEntriesNotifier implements Notifier {
   }
 
   @Override
-  public void addAllListeners(List<Listener> allListeners) {
-    allListeners.forEach(this::addListener);
+  public void addMultipleListeners(List<Listener> multipleListeners) {
+    multipleListeners.forEach(this::addListener);
   }
 
   @Override
@@ -44,8 +52,7 @@ public class RecordedEntriesNotifier implements Notifier {
   }
 
   @Override
-  public void notifyContent(List<Entry> entries) {
+  public void setNotificationContent(List<Entry> entries) {
     this.recordedEntries = entries;
-    notifyListeners();
   }
 }
