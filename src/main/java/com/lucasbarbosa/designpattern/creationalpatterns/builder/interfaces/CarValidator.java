@@ -3,17 +3,15 @@ package com.lucasbarbosa.designpattern.creationalpatterns.builder.interfaces;
 import com.lucasbarbosa.designpattern.creationalpatterns.builder.driver.Engine;
 import com.lucasbarbosa.designpattern.creationalpatterns.builder.model.Car;
 
-public interface CarBuilder {
+public interface CarValidator {
 
-  Integer placeSeats();
+  CarValidator placeSeats(Integer seats);
 
-  Engine placeEngine();
+  CarValidator placeEngine(Engine engine);
 
-  boolean hasTripComputer();
+  CarValidator hasTripComputer(boolean hasTripComputer);
 
-  boolean hasGPS();
+  CarValidator hasGPS(boolean hasGPS);
 
-  Car mountCar();
-
-
+  Car build();
 }

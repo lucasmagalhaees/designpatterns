@@ -8,7 +8,6 @@ import lombok.NoArgsConstructor;
 @Getter
 @NoArgsConstructor
 public enum ColorEnum {
-
   RED,
   YELLOW,
   GREEN,
@@ -17,8 +16,6 @@ public enum ColorEnum {
   WHITE;
 
   public static Optional<String> fetchRandomColor() {
-    return Arrays.stream(ColorEnum.values()).map(Enum::name).
-        findAny();
+    return Arrays.stream(ColorEnum.values()).map(Enum::name).findAny();
   }
-
 }

@@ -8,9 +8,9 @@ import org.apache.commons.lang3.builder.ToStringStyle;
 @Getter
 @Setter
 public abstract class Chair {
-  
+
   private Integer legsNumber;
-  
+
   private boolean hasBraces;
 
   protected Chair(Integer legsNumber, boolean hasBraces) {

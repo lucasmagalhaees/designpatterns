@@ -16,5 +16,4 @@ public class AbstractFactoryEntrypoint {
     log.info("French ordered {}", frenchOrder);
     log.info("Italian ordered {}", italianOrder);
   }
-
 }

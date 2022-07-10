@@ -21,14 +21,6 @@ public abstract class Car {
 
   private boolean hasGPS;
 
-  protected Car(Integer seats,
-      Engine engine, boolean hasTripComputer, boolean hasGPS) {
-    this.seats = seats;
-    this.engine = engine;
-    this.hasTripComputer = hasTripComputer;
-    this.hasGPS = hasGPS;
-  }
-
   public abstract Car reset();
 
   @Override

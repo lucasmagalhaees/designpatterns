@@ -25,5 +25,4 @@ public class Database {
   public void query(String sql) {
     log.info("sql query is {}", sql);
   }
-
 }
